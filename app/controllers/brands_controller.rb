@@ -1,6 +1,6 @@
 class BrandsController < ApplicationController
-  # before_action :authenticate_user!, except: %i[ index show ]
-  before_action :create_brands
+  before_action :authenticate_user!, except: %i[ index show ]
+  before_action :user_admin, except: %i[ index ]
 
   def index
     @brands = Brand.all

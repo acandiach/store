@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
-  # before_action :configure_permitted_parameters, if: :devise_controller?
+  #before_action :configure_permitted_parameters, if: :devise_controller?
 
-  protected
+  #protected
 
-  # def configure_permitted_parameters
-  #   devise_parametters_sanitizer.permit(:sign_up, keys: [:email])
-  # end
+  #def configure_permitted_parameters
+    #devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
+  #end
 
-  def create_brands
+  def user_admin
     if !current_user.admin?
       redirect_to products_path, alert: "You do not have permission for this action"
     end

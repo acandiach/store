@@ -1,0 +1,3 @@
+id,email,password,rol
+1,grupo1@mail.com,123456,admin
+2,user@mail.com,123456,seller
