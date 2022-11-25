@@ -6,12 +6,9 @@ class User < ApplicationRecord
 
   has_many :products, dependent: :destroy
 
-  enum rol: [:visit, :seller, :admin]
-
-  after_initialize do
-    if self.new_record?
-      self.rol ||= :visit
-    end
-  end
-
+  enum rol: [:seller, :admin]
+  #after_initialize :set_default_rol, :if => :new_record?
+  #def set_default_rol
+    #self.rol ||= :visit
+  #end
 end

@@ -18,6 +18,7 @@
         <li><%= link_to "Log in", new_user_session_path %></li>
         <li><%= link_to("Cerrar sesión", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }) %></li>
         <li><%= link_to "Brands", brands_path %></li>
+        <li><%= link_to "Products", products_path %></li>
       </ul>
     </nav>
     <p class="notice"><%= notice %></p>
