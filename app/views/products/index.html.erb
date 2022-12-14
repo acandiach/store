@@ -1,13 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
+<%= render partial: 'category', collection: @categories %>
+
+<% if user_signed_in? %>
+  <% if current_user.rol == "admin" %>
+    <%= link_to 'Categories', categories_path %>
+  <% else %>
+  <% end %>
+<% end %>
+
 <h1>Products</h1>
 
 <div id="products">
   <% @products.each do |product| %>
-    <%= render product %>
-    <p>
-      <%= link_to "Show this product", product %>
-    </p>
+    <article id="article">
+      <h2><%= product.name %></h2>
+
+      <footer class="footer">
+        <span>Category: <%= product.category.name %></span>
+        <span>Brand: <%= product.brand.name %></span>
+        <%= link_to "Show this product", product %>
+      </footer>
+    </article>
   <% end %>
 </div>
 

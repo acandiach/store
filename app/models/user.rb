@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :products, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   enum rol: [:seller, :admin]
   #after_initialize :set_default_rol, :if => :new_record?

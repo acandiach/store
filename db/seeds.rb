@@ -8,6 +8,14 @@ CSV.foreach(Rails.root.join('db/seeds/csv/brands.csv'), headers: true) do |row|
   end
 end
 
+puts 'Importing categories 5...'
+CSV.foreach(Rails.root.join('db/seeds/csv/categories.csv'), headers: true) do |row|
+  Category.create! do |category|
+    category.id = row[0]
+    category.name = row[1]
+  end
+end
+
 puts 'Creating User admin...'
 CSV.foreach(Rails.root.join('db/seeds/csv/users.csv'), headers: true) do |row|
   User.create! do |user|
