@@ -1,11 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyText
-  brand: one
+product_one:
+  name: Coche
+  description: en muy buen estado
+  brand_id: 1
+  user_id: 1
+  category_id: 1
 
-two:
-  name: MyString
-  description: MyText
-  brand: two
+
+product_two:
+  name: Zapatos
+  description: poco uso en excelentes condiciones
+  brand_id: 1
+  user_id: 1
+  category_id: 1

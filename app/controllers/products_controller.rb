@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
+  before_action :authenticate_user!, except: %i[ index show ]
+  before_action :create_products, except: %i[ index show ]
   before_action :set_product, only: %i[ show edit update destroy ]
-  before_action :authenticate_user!,:create_products, except: %i[ index show ]
   #before_action :create_products, except: %i[ index show ]
 
   # GET /products or /products.json
