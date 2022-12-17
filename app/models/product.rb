@@ -1,4 +1,5 @@
 class Product < ApplicationRecord
+  has_one_attached :photo
   belongs_to :brand
   belongs_to :category
   belongs_to :user
